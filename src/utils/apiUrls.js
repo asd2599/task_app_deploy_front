@@ -1,4 +1,4 @@
-const DOMAIN = "http://18.234.62.219";
+const DOMAIN = "https://backend.gamestack.store";
 
 const GET_TASKS_API_URL = `${DOMAIN}/get_tasks`;
 const POST_TASKS_API_URL = `${DOMAIN}/post_task`;
