@@ -5,8 +5,6 @@ COPY package*.json .
 RUN npm install
 COPY . .
 
-ARG VITE_AUTH_CLIENT_ID
-ENV VITE_AUTH_CLIENT_ID=$VITE_AUTH_CLIENT_ID
 RUN npm run build
 
 # Server Setting nginx

@@ -16,11 +16,11 @@ jobs:
       - name: Create env file
         run: |
           touch .env
-          echo "VITE_AUTH_CLIENT_ID=${{ secrets.VITE_AUTH_CLIENT_ID }}" > .env
+          echo "${{ secrets.VITE_AUTH_CLIENT_ID }}" > .env
       - name: Sign in to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
-        run: docker build --build-arg VITE_AUTH_CLIENT_ID=${{ secrets.VITE_AUTH_CLIENT_ID }} -t asd25999/task_app_front_deploy .
+        run: docker build -t asd25999/task_app_front_deploy .
       - name: Push Docker Image
         run: docker push asd25999/task_app_front_deploy:latest
 
