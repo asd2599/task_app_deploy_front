@@ -5,9 +5,7 @@ COPY package*.json .
 RUN npm install
 COPY . .
 
-RUN VITE_GOOGLE_CLIENT_ID=438741904598-pav154s7o1j25i4cpfgre2d7h1m8fi49.apps.googleusercontent.com npm run build
-
-
+RUN VITE_GOOGLE_CLIENT_ID=$VITE_GOOGLE_CLIENT_ID npm run build
 
 # Server Setting nginx
 FROM nginx:1.23-alpine
